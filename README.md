@@ -13,13 +13,14 @@ cd voting-system
 
 # entorno virtual
 python -m venv venv
-source venv/bin/activate  # en windows: venv\Scripts\activate
+.\venv\Scripts\Activate  # en windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # levantar postgres
 docker-compose up -d
 
 # copiar variables de entorno (los defaults ya coinciden con el docker-compose)
+notepad .env #DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/voting_db
 cp .env.example .env
 
 # migraciones
